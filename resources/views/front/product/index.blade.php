@@ -19,6 +19,8 @@
                             <h5 class="card-title"> 產品名稱 : {{$item->name}} </h5>
                             <p class="card-text"> 產品介紹 : {{$item->discript}} </p>
                             <p class="card-title"> 我是圖片 : {{$item->img}} </p>
+                            <p class="card-text"> 折扣後價格 : {{$item->price*$item->discount}} </p>
+
                             <a href="{{ asset('product')}}/{{ $item->id }}">查看更多<a>
                             {{-- <p class="card-text"> 折扣後價格 : {{$products_discount->productDiscount}} </p> --}}
                         </div>
