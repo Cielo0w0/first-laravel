@@ -1,0 +1,20 @@
+h1{
+    padding: 40px 0 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.row{
+    padding: 20px 0 20px;
+}
+
+.card{
+
+    background-color: rgb(251, 255, 212);
+    border-radius: 10px;
+}
+
+.card-title{
+    font-weight: 600;
+    color: teal;
+}

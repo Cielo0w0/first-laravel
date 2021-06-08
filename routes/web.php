@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 Route::get('/', 'FrontController@index');
 Route::get('/news', 'FrontController@news');
 Route::get('/news/{id}', 'FrontController@newsDetail');
 Route::get('/product', 'FrontController@product');
-
+Route::get('/product/{id}', 'FrontController@productDetail');
