@@ -16,13 +16,21 @@
     <div id="nav">
         <a href="{{ asset('/news') }}" class="navword">最新消息</a>
         <a href="{{ asset('/product') }}"class="navword">產品資訊</a>
+        <a href="{{ asset('/contactus') }}"class="navword">聯絡我們</a>
         <a href="{{ asset('/') }}"class="navword">回到首頁</a>
     </div>
 
     <div class="container-fluid">
+        @if (Session::has('message'))
+            <div class="container d-flex" >
+                <div class="alert alert-info col-md-12" role="alert" >
+                    {{Session::get('message')}}
+                </div>
+            </div>
+        @endif
+
         @yield('content')
     </div>
-
 
     {{--Bootstrap CDN--}}
     <script>

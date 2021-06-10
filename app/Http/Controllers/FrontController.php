@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contactus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 // 記得要先打DB+enter出現此句，下面的DB才能用
@@ -51,4 +52,65 @@ class FrontController extends Controller
         $products_discount = DB::table('products')->selectRaw('price * discount as productDiscount')->find($id);
         return view('front.product.detail',compact('record_products'));
     }
+
+    // 聯絡我們
+    public function contactus(){
+            //  $lists = DB::table('Contactus')->get();
+            $lists = Contactus::get();
+            return view('front.contactus.index');
+        }
+
+
+    // 真資料:透過model新增資料
+    // public function push()
+    // {
+    //     Contactus::create([
+    //         php串字串是用.
+    //         'name' => '你好'.'123',
+    //         'email' => 'abc@123',
+    //         'phone' => '0987654321',
+    //         'content' => 'jfdijoisyhoegrhepiwjuurofchoiedch4eip',
+    //     ]);
+    // }
+
+    public function push(Request $request)
+    {
+        Contactus::create([
+            // php串字串是用.
+            // 'name' => '你好'.'123',
+            // 'email' => 'abc@123',
+            // 'phone' => '0987654321',
+            // 'content' => 'jfdijoisyhoegrhepiwjuurofchoiedch4eip',
+
+            'name' =>  $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'content' => $request->content,
+        ]);
+
+        return redirect('/contactus')->with('message','成功聯絡我們');
+        // 寫route
+    }
+
+    public function change(){
+        // // 抓到要改的資料
+        // $old_record=Contactus::find(1);
+        // // 修改資料欄位
+        // $old_record->name='Yuki';
+        // $old_record->phone='0988066666';
+        // // 改完存檔
+        // $old_record->save();
+
+        // dd($old_record);
+
+        $old_record = Contactus::where('email','abc@123')->get();
+
+        foreach ($old_record as $key => $value) {
+            $value->name = 'yuki';
+            $value->phone = '0988055221';
+            $value->save();
+        }
+    }
+
+
 }
