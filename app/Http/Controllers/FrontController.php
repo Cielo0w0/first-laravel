@@ -73,7 +73,17 @@ class FrontController extends Controller
     //     ]);
     // }
 
-    public function push(Request $request)
+
+
+
+
+
+
+
+
+
+    
+    public function contactusSend(Request $request)
     {
         Contactus::create([
             // php串字串是用.
@@ -111,6 +121,7 @@ class FrontController extends Controller
             $value->save();
         }
     }
+
 
 
 }
