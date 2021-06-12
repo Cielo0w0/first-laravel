@@ -74,15 +74,6 @@ class FrontController extends Controller
     // }
 
 
-
-
-
-
-
-
-
-
-    
     public function contactusSend(Request $request)
     {
         Contactus::create([

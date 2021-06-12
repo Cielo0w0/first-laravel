@@ -30,7 +30,7 @@ Route::get('/product', 'FrontController@product');
 Route::get('/product/{id}', 'FrontController@productDetail');
 
 Route::get('/contactus', 'FrontController@contactus');
-Route::post('/contactus/send', 'FrontController@/contactusSend');
+Route::post('/contactus/send', 'FrontController@contactusSend');
 
 Route::get('/change', 'FrontController@change');
 

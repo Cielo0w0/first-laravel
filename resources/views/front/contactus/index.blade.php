@@ -11,7 +11,7 @@
 {{-- form action="要把表單送到啥路徑" method="route的方法" --}}
 {{-- 會自動抓input的值送出去，但一定要幫資料取名，name="" --}}
     <div class="container">
-        <form action="'/contactus/send" method="post">
+        <form action="/contactus/send" method="post">
             @csrf
             <div class="form-row">
                 <div class="form-group col-md-6">
