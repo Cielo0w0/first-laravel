@@ -16,7 +16,9 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        //
+        //資料表內資料清空指令
+        DB::table('products')->truncate();
+
         for ($i=0; $i < 30; $i++) {
             DB::table('products')->insert([
                 'name' => Str::random(10),
