@@ -27,6 +27,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{asset('admin/contactus')}}">聯絡我們</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('admin/product')}}">產品管理</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">

@@ -40,8 +40,16 @@ Route::get('/admin', function(){
     return view('admin.index');
 });
 
-// Back-ContactusController
+// 後端 : Contactus Controller
 Route::get('/admin/contactus', 'ContactusController@index');
 Route::get('/admin/contactus/edit/{id}', 'ContactusController@edit');
 Route::post('/admin/contactus/update/{id}', 'ContactusController@update');
 Route::delete('/admin/contactus/delete/{id}', 'ContactusController@delete');
+
+
+Route::get('/admin/product', 'ProductController@index');
+Route::get('/admin/product/create', 'ProductController@create');
+Route::post('/admin/product/productStore', 'ProductController@productStore');
+Route::get('/admin/product/edit/{id}', 'ProductController@edit');
+Route::post('/admin/product/productUpdate/{id}', 'ProductController@productUpdate');
+Route::delete('/admin/product/delete/{id}', 'ProductController@delete');

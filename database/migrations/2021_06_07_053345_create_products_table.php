@@ -14,7 +14,6 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            // 全部欄位都要在企劃時確認好，不然事後要加減很麻煩，不能說加就加!!!!
             $table->id();
             // $table->資料型態('欄位名稱');
             // ->comment('可以寫註解')
