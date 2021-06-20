@@ -35,16 +35,18 @@ body{
     height: calc(100vh - 55px);
     position: absolute;
     top: 55px;
-    background-color: rgb(224, 186, 192);
+    background-color: rgb(233, 198, 204);
 }
 
 a{
     margin-right: 15px;
-    }
+    text-decoration:none;
+}
 
 a:hover{
     background-color: burlywood;
     border-radius: 30px;
+    text-decoration:none;
 }
 
 
@@ -55,10 +57,10 @@ a:hover{
 }
 
 .navword{
-    color: brown;
+    color: palevioletred;
     text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
     font-family: sans-serif;
 }
 

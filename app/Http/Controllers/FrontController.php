@@ -39,18 +39,32 @@ class FrontController extends Controller
         return view('front.news.detail',compact('record'));
     }
 
+    // // 產品介紹-列表
+    // public function product(){
+    //     $products = DB::table('products')->get();
+
+    //     return view('front.product.index',compact('products'));
+    // }
+
+
     // 產品介紹-列表
     public function product(){
         $products = DB::table('products')->get();
-        return view('front.product.index',compact('products'));
+        $discount_price = [];
+        foreach ($products as $key => $value) {
+            array_push($discount_price,round( $value->price * $value->discount));
+        }
+        return view('front.product.index',compact('products','discount_price'));
     }
 
     // 產品介紹-單筆資料
     public function productDetail($id){
         $record_products = DB::table('products')->find($id);
         // selectRaw看文件應該是有新增欄位的意思，as 後面自己取$key值，再到頁面call他
-        $products_discount = DB::table('products')->selectRaw('price * discount as productDiscount')->find($id);
-        return view('front.product.detail',compact('record_products'));
+        // $products_discount = DB::table('products')->selectRaw('price * discount as productDiscount')->find($id);
+        $products_discount = round(  $record_products->price *  $record_products->discount);
+
+        return view('front.product.detail',compact('record_products','products_discount'));
     }
 
     // 聯絡我們

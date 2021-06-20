@@ -16,6 +16,6 @@
         <p class="text"> 產品介紹 : {{$record_products->discript}} </p>
         <p class="text"> 產品定價 : {{$record_products->price}} </p>
         <p class="text"> 產品折扣 : {{$record_products->discount}} 折</p>
-        <p class="text"> 折扣後價格 : {{$record_products->price*$record_products->discount}} </p>
+        <p class="text"> 折扣後價格 : {{$products_discount}} </p>
     </div>
 @endsection
