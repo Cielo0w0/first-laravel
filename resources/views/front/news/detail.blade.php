@@ -9,9 +9,9 @@
 @endsection
 
 @section('content')
-    <h1>最新消息-內容頁</h1>
+    <h1 >最新消息-內容頁</h1>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin: 50px 0 ">
         <h2 class="title">
             {{-- 最新消息:標題 --}}
             {{ $record->title }}
